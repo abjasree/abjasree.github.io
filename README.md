@@ -1,6 +1,6 @@
-# Sourav’s Portfolio Site
+# Abjasree's Portfolio Site
 
-This repository houses the source code for [souravas.com](https://souravas.com) — a personal portfolio website showcasing my profile, skills, experience, and contact information. The site is built with Parcel and includes best practices for SEO like `robots.txt` and `sitemap.xml`.
+This repository houses the source code for [abjasree.com](https://abjasree.com) — a personal portfolio website showcasing my profile, skills, experience, and contact information. The site is built with Parcel and includes best practices for SEO like `robots.txt` and `sitemap.xml`.
 
 ## Table of Contents
 
@@ -17,7 +17,7 @@ This repository houses the source code for [souravas.com](https://souravas.com) 
 
 ## Overview
 
-- **Live Site:** [souravas.com](https://souravas.com)
+- **Live Site:** [abjasree.com](https://abjasree.com)
 - **Description:**
   - Single-page portfolio: includes About, Skills, Experience, Certifications, Education, and Contact sections.
   - Uses [Parcel](https://parceljs.org/) for bundling and asset optimization.
@@ -55,8 +55,8 @@ This repository houses the source code for [souravas.com](https://souravas.com) 
 
 1. **Clone** the repository:
     ```bash
-    git clone https://github.com/souravas/souravas.github.io.git
-    cd souravas.github.io
+    git clone https://github.com/abjasree/abjasree.github.io.git
+    cd abjasree.github.io
     ```
 
 2. **Install** dependencies:
@@ -88,7 +88,7 @@ This repository houses the source code for [souravas.com](https://souravas.com) 
 Below is a simplified look at the repo’s file layout:
 
 ```
-souravas.github.io/
+abjasree.github.io/
 ├─ src/
 │  ├─ assets/           # images, icons, etc.
 │  ├─ index.html        # main HTML entry
@@ -103,7 +103,7 @@ souravas.github.io/
 ```
 
 - **`src/`**: Contains the actual web app source files (HTML, CSS, JS).
-- **`robots.txt`** and **`sitemap.xml`**: Placed in root to be served at `https://souravas.com/robots.txt` and `https://souravas.com/sitemap.xml`.
+- **`robots.txt`** and **`sitemap.xml`**: Placed in root to be served at `https://abjasree.com/robots.txt` and `https://abjasree.com/sitemap.xml`.
 - **`package.json`**: Scripts, dependencies, and configurations for Parcel.
 - **`dist/`**: Generated build folder (copied into root via `postbuild`).
 
