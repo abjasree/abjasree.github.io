@@ -7,7 +7,7 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://www.souravas.com/</loc>
+    <loc>https://www.abjasree.com/</loc>
     <lastmod>2025-02-24</lastmod>
     <priority>1.00</priority>
     <changefreq>monthly</changefreq>
@@ -15,7 +15,7 @@
 
   <!-- About Section -->
   <url>
-    <loc>https://www.souravas.com/#about</loc>
+    <loc>https://www.abjasree.com/#about</loc>
     <lastmod>2025-02-24</lastmod>
     <priority>0.80</priority>
     <changefreq>monthly</changefreq>
@@ -23,7 +23,7 @@
 
   <!-- Skills Section -->
   <url>
-    <loc>https://www.souravas.com/#skills</loc>
+    <loc>https://www.abjasree.com/#skills</loc>
     <lastmod>2025-02-24</lastmod>
     <priority>0.80</priority>
     <changefreq>monthly</changefreq>
@@ -31,7 +31,7 @@
 
   <!-- Experience Section -->
   <url>
-    <loc>https://www.souravas.com/#experience</loc>
+    <loc>https://www.abjasree.com/#experience</loc>
     <lastmod>2025-02-24</lastmod>
     <priority>0.80</priority>
     <changefreq>monthly</changefreq>
@@ -39,7 +39,7 @@
 
   <!-- Certifications Section -->
   <url>
-    <loc>https://www.souravas.com/#certifications</loc>
+    <loc>https://www.abjasree.com/#certifications</loc>
     <lastmod>2025-02-24</lastmod>
     <priority>0.80</priority>
     <changefreq>monthly</changefreq>
@@ -47,7 +47,7 @@
 
   <!-- Education Section -->
   <url>
-    <loc>https://www.souravas.com/#education</loc>
+    <loc>https://www.abjasree.com/#education</loc>
     <lastmod>2025-02-24</lastmod>
     <priority>0.80</priority>
     <changefreq>monthly</changefreq>
@@ -55,7 +55,7 @@
 
   <!-- Contact Section -->
   <url>
-    <loc>https://www.souravas.com/#contact</loc>
+    <loc>https://www.abjasree.com/#contact</loc>
     <lastmod>2025-02-24</lastmod>
     <priority>0.80</priority>
     <changefreq>monthly</changefreq>
@@ -63,19 +63,19 @@
 
   <!-- Resume/CV Pages -->
   <url>
-    <loc>https://www.souravas.com/assets/resume.pdf</loc>
+    <loc>https://www.abjasree.com/assets/resume.pdf</loc>
     <lastmod>2025-02-24</lastmod>
     <priority>0.80</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.souravas.com/resume</loc>
+    <loc>https://www.abjasree.com/resume</loc>
     <lastmod>2025-02-24</lastmod>
     <priority>0.80</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.souravas.com/cv</loc>
+    <loc>https://www.abjasree.com/cv</loc>
     <lastmod>2025-02-24</lastmod>
     <priority>0.80</priority>
     <changefreq>monthly</changefreq>
