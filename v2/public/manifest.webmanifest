@@ -1,0 +1,20 @@
+{
+  "name": "Abjasree — Data Scientist Portfolio",
+  "short_name": "Abjasree",
+  "description": "Abjasree — Lead Data Scientist (4+ years). AI/ML specialist with expertise in Python, TensorFlow, PyTorch, and more. Passionate about building innovative AI solutions.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0b1220",
+  "theme_color": "#0ea5e9",
+  "categories": ["portfolio", "developer", "software"],
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

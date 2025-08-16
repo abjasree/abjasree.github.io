@@ -1,0 +1,41 @@
+{
+  "name": "abjasree-v2",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "description": "Abjasree's personal portfolio website - Lead Data Scientist specializing in GenAI and Clinical AI",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && gh-pages -d dist",
+    "analyze": "npx vite-bundle-analyzer dist",
+    "optimize": "npm run build && npm run analyze"
+  },
+  "keywords": [
+    "portfolio",
+    "data-science",
+    "machine-learning",
+    "ai",
+    "genai",
+    "clinical-ai",
+    "nlp",
+    "computer-vision",
+    "healthcare-ai"
+  ],
+  "author": "Abjasree",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abjasree/abjasree.github.io.git"
+  },
+  "homepage": "https://abjasree.com",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "cssnano": "^7.1.0",
+    "gh-pages": "^6.3.0",
+    "postcss": "^8.5.6",
+    "terser": "^5.43.1",
+    "vite": "^6.2.0"
+  }
+}

@@ -1,122 +1,121 @@
-# Abjasree's Portfolio Site
+# Abjasree's Portfolio - Integrated Site
 
-This repository houses the source code for [abjasree.com](https://abjasree.com) — a personal portfolio website showcasing my profile, skills, experience, and contact information. The site is built with Parcel and includes best practices for SEO like `robots.txt` and `sitemap.xml`.
+This repository contains an integrated version of Abjasree's portfolio website that serves both v1 and v2 versions.
 
-## Table of Contents
+## 🌐 Site Structure
 
-- [Overview](#overview)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Build & Deployment](#build--deployment)
-- [File Structure](#file-structure)
-- [Credits](#credits)
-- [License](#license)
+- **Main site (/)**: Serves the original v1 design
+- **v1 (/v1)**: Redirects to the main site
+- **v2 (/v2)**: Serves the new v2 design
 
----
+## 🚀 Getting Started
 
-## Overview
+### Installation
 
-- **Live Site:** [abjasree.com](https://abjasree.com)
-- **Description:**
-  - Single-page portfolio: includes About, Skills, Experience, Certifications, Education, and Contact sections.
-  - Uses [Parcel](https://parceljs.org/) for bundling and asset optimization.
-  - Provides `robots.txt` and `sitemap.xml` for search engine crawling and indexing.
-  - JSON-LD structured data for improved SEO (`<script type="application/ld+json">...`).
+```bash
+# Install dependencies for the root project
+npm install
 
----
+# Install dependencies for v1
+cd v1 && npm install && cd ..
 
-## Features
-
-- **Responsive Layout**: Adapts to various screen sizes (mobile, tablet, desktop).
-- **Dark/Light Theme Toggle**: Allows users to switch between color modes.
-- **Accessible Navigation**: “Skip to content” link, accessible labels, and keyboard-friendly menu.
-- **Optimized SEO**:
-  - `robots.txt` to allow all crawlers and link to sitemap.
-  - `sitemap.xml` for better URL discovery.
-  - `application/ld+json` structured data for person/organization details.
-- **Form Handling**: Simple contact form (can be integrated with an external service or email endpoint).
-
----
-
-## Technologies Used
-
-- **HTML5** & **CSS3** (Poppins font & responsive design)
-- **JavaScript (ES6+)**
-- **Parcel** (v2) for bundling
-  - [`@parcel/transformer-jsonld`](https://parceljs.org/languages/jsonld/) (handles JSON-LD files)
-  - [`@parcel/packager-raw-url`](https://parceljs.org/recipes/raw/) (raw-file packing if needed)
-- **copyfiles** for post-build file copying
-- **GitHub Pages** for deployment
-
----
-
-## Installation
-
-1. **Clone** the repository:
-    ```bash
-    git clone https://github.com/abjasree/abjasree.github.io.git
-    cd abjasree.github.io
-    ```
-
-2. **Install** dependencies:
-   ```bash
-   npm install
-   ```
-
----
-
-## Build & Deployment
-
-- **Production Build**:
-  ```bash
-  npm run build
-  ```
-  This will:
-  1. Clean previous build artifacts (`.parcel-cache`, `dist`).
-  2. Run Parcel build on your entry files (e.g., `index.html`).
-  3. Copy the output files from `dist` back into the root for GitHub Pages.
-
-- **Deploy**:
-  - If you are hosting directly from the `main` branch on GitHub Pages, the updated site goes live automatically once the final files are pushed.
-  - Otherwise, if you use a separate `gh-pages` branch, push the `dist` contents there (the current configuration copies them to root, so your final approach may vary).
-
----
-
-## File Structure
-
-Below is a simplified look at the repo’s file layout:
-
-```
-abjasree.github.io/
-├─ src/
-│  ├─ assets/           # images, icons, etc.
-│  ├─ index.html        # main HTML entry
-│  ├─ style.css         # main CSS
-│  └─ script.js         # main JS
-├─ robots.txt           # Basic robots instructions & sitemap link
-├─ sitemap.xml          # Sitemap for improved SEO
-├─ package.json
-├─ .parcel-cache/       # (created on build)
-├─ dist/                # (created on build)
-└─ README.md
+# Install dependencies for v2
+cd v2 && npm install && cd ..
 ```
 
-- **`src/`**: Contains the actual web app source files (HTML, CSS, JS).
-- **`robots.txt`** and **`sitemap.xml`**: Placed in root to be served at `https://abjasree.com/robots.txt` and `https://abjasree.com/sitemap.xml`.
-- **`package.json`**: Scripts, dependencies, and configurations for Parcel.
-- **`dist/`**: Generated build folder (copied into root via `postbuild`).
+### Development
 
----
+```bash
+# Run v1 in development mode
+npm run dev:v1
 
-## Credits
+# Run v2 in development mode
+npm run dev:v2
 
-- **Icons**: Potentially from [Font Awesome](https://fontawesome.com/) SVG icons.
-- **Fonts**: [Google Fonts](https://fonts.google.com/) (Poppins).
-- **Frameworks/Tools**: [Parcel](https://parceljs.org/), [copyfiles](https://www.npmjs.com/package/copyfiles).
+# Run v1 by default
+npm run dev
+```
 
----
+### Building
 
-## License
+```bash
+# Build both versions and integrate them
+npm run build
 
-Distributed under the MIT License. See `LICENSE` for details (if added).
+# Build only v1
+npm run build:v1
+
+# Build only v2
+npm run build:v2
+
+# Clean all build artifacts
+npm run clean
+```
+
+### Deployment
+
+```bash
+# Deploy to GitHub Pages
+npm run deploy
+
+# Or use the shell script
+./deploy.sh
+```
+
+## 📁 Project Structure
+
+```
+abjasree.github.io_integrated/
+├── v1/                 # Original portfolio (v1)
+├── v2/                 # New portfolio design (v2)
+├── scripts/
+│   └── integrate.js    # Integration script
+├── dist/               # Final integrated build
+├── deploy.sh           # Deployment script
+└── package.json        # Root package.json
+```
+
+## 🔧 How It Works
+
+1. **Build Process**: Each version is built independently in its respective directory
+2. **Integration**: The `integrate.js` script combines both builds:
+   - v1 files are copied to the root of `dist/`
+   - v2 files are copied to `dist/v2/`
+   - A redirect is created at `dist/v1/` that points to the root
+3. **Deployment**: The integrated `dist/` folder is deployed to GitHub Pages
+
+## 🛠 Maintenance
+
+### Adding New Features
+
+- **For v1**: Work in the `v1/` directory
+- **For v2**: Work in the `v2/` directory
+- **For shared functionality**: Consider updating the integration script
+
+### Updating Dependencies
+
+```bash
+# Update root dependencies
+npm update
+
+# Update v1 dependencies
+cd v1 && npm update && cd ..
+
+# Update v2 dependencies
+cd v2 && npm update && cd ..
+```
+
+## 📊 Performance
+
+Both versions are optimized for production with:
+- Minified assets
+- Tree shaking
+- CSS optimization
+- Image optimization
+- Service worker caching (where applicable)
+
+## 🔗 Links
+
+- **Live Site**: https://abjasree.github.io
+- **V2 Version**: https://abjasree.github.io/v2
+- **Repository**: https://github.com/abjasree/abjasree.github.io
