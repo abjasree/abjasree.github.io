@@ -5,8 +5,8 @@
   "type": "module",
   "description": "Abjasree's personal portfolio website - Lead Data Scientist specializing in GenAI and Clinical AI",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+  "dev": "vite",
+  "build": "node ./node_modules/vite/dist/node/cli.js build",
     "preview": "vite preview",
     "deploy": "npm run build && gh-pages -d dist",
     "analyze": "npx vite-bundle-analyzer dist",
