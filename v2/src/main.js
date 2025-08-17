@@ -36,6 +36,11 @@ import "./style.css";
       } else {
         localStorage.removeItem(key);
       }
+
+      // Remove focus to prevent persistent outline after click
+      setTimeout(() => {
+        btn.blur();
+      }, 150);
     });
   }
 })();
@@ -77,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// Contact form handling
+// Contact form handling (mailto -> abjasree)
 (function () {
   const form = document.getElementById("contact-form");
   if (!form) return;
@@ -223,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
   updateActiveLink();
 })();
 
-// Remove focus from external links
+// Remove focus from external links on click or tab-return
 (function () {
   document.addEventListener("click", function (e) {
     const link = e.target.closest("a");
@@ -250,7 +255,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 })();
 
-// Load GitHub projects (if projects section exists)
+// Load GitHub projects (if projects section exists) — uses abjasree username
 (async function loadProjects() {
   const grid = document.getElementById("projects-grid");
   if (!grid) return;
