@@ -82,33 +82,34 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// Contact form handling (mailto -> abjasree)
+// Contact form handling (Formspree, mailto fallback)
 (function () {
   const form = document.getElementById("contact-form");
   if (!form) return;
 
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
+    if (!form.reportValidity()) return;
+
+    const data = new FormData(form);
+    const name = (data.get("name") || "").toString().trim();
+    const email = (data.get("email") || "").toString().trim();
+    const msg = (data.get("message") || "").toString().trim();
+    data.set("_subject", `Website contact from ${name}`);
 
     try {
-      const data = new FormData(form);
-      const name = encodeURIComponent(data.get("name") || "");
-      const email = encodeURIComponent(data.get("email") || "");
-      const msg = encodeURIComponent(data.get("message") || "");
-
-      if (!name || !email || !msg) {
-        alert("Please fill in all fields");
-        return;
-      }
-
-      const subject = `Website contact from ${decodeURIComponent(name)}`;
-      const body = `From: ${decodeURIComponent(name)} <${decodeURIComponent(
-        email
-      )}>%0D%0A%0D%0A${decodeURIComponent(msg)}`;
+      const res = await fetch(form.action, {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+      if (!res.ok) throw new Error(`Formspree responded ${res.status}`);
+      form.reset();
+      alert("Message sent ✓");
+    } catch {
+      const subject = encodeURIComponent(`Website contact from ${name}`);
+      const body = encodeURIComponent(`From: ${name} <${email}>\n\n${msg}`);
       window.location.href = `mailto:abjasree1@gmail.com?subject=${subject}&body=${body}`;
-    } catch (error) {
-      console.error("Contact form error:", error);
-      alert("Error sending message. Please try again.");
     }
   });
 })();

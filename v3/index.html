@@ -1,0 +1,717 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <meta name="theme-color" content="#050807" />
+
+  <script>
+    document.documentElement.classList.remove('no-js');
+    try {
+      const stored = localStorage.getItem('theme');
+      const t = stored === 'light' || stored === 'dark'
+        ? stored
+        : (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.style.colorScheme = t;
+      document.querySelector('meta[name="theme-color"]').content = t === 'light' ? '#edf0ea' : '#050807';
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.documentElement.style.colorScheme = 'dark';
+    }
+  </script>
+
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://formspree.io; manifest-src 'self'; base-uri 'self'; form-action 'self' https://formspree.io; object-src 'none'; upgrade-insecure-requests" />
+
+  <title>Abjasree — Lead Data Scientist · GenAI &amp; Clinical AI</title>
+  <meta name="description" content="Lead Data Scientist (4+ years) building GenAI, clinical NLP, and computer-vision pipelines for healthcare. Python · PyTorch · AWS · Azure · Snowflake." />
+  <meta name="author" content="Abjasree" />
+  <meta property="article:author" content="Abjasree" />
+  <meta property="article:published_time" content="2025-08-01T00:00:00Z" />
+  <meta property="article:modified_time" content="__BUILD_DATE__" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" href="/favicon-96x96.png" sizes="96x96" type="image/png" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Abjasree" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+
+  <link rel="canonical" href="https://abjasree.com/v3/" />
+  <meta property="og:site_name" content="Abjasree" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Abjasree — Lead Data Scientist · GenAI &amp; Clinical AI" />
+  <meta property="og:description" content="Lead Data Scientist (4+ years) building GenAI, clinical NLP, and computer-vision pipelines for healthcare. Python · PyTorch · AWS · Azure · Snowflake." />
+  <meta property="og:url" content="https://abjasree.com/v3/" />
+  <meta property="og:type" content="profile" />
+  <meta property="profile:first_name" content="Abjasree" />
+  <meta property="profile:username" content="abjasree" />
+  <meta property="og:image" content="https://abjasree.com/assets/profile.webp" />
+  <meta property="og:image:type" content="image/webp" />
+  <meta property="og:image:width" content="300" />
+  <meta property="og:image:height" content="300" />
+  <meta property="og:image:alt" content="Abjasree — Lead Data Scientist building intelligent clinical AI systems." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Abjasree — Lead Data Scientist · GenAI &amp; Clinical AI" />
+  <meta name="twitter:description" content="Lead Data Scientist (4+ years) building GenAI, clinical NLP, and computer-vision pipelines for healthcare. Python · PyTorch · AWS · Azure · Snowflake." />
+  <meta name="twitter:image" content="https://abjasree.com/assets/profile.webp" />
+  <meta name="twitter:image:alt" content="Abjasree — Lead Data Scientist building intelligent clinical AI systems." />
+
+  <link rel="preload" as="image" href="/assets/profile.webp" fetchpriority="high" />
+  <link rel="preload" as="font" type="font/woff2" href="/v3/fonts/chakra-petch-700.woff2" crossorigin fetchpriority="high" />
+  <link rel="preload" as="font" type="font/woff2" href="/v3/fonts/red-hat-mono.woff2" crossorigin fetchpriority="high" />
+  <link rel="preload" as="font" type="font/woff2" href="/v3/fonts/chakra-petch-600.woff2" crossorigin />
+
+  <link rel="stylesheet" href="/v3/style.css" />
+  <script type="module" src="/v3/main.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": "https://abjasree.com/v3/#webpage",
+    "url": "https://abjasree.com/v3/",
+    "name": "Abjasree — Lead Data Scientist · GenAI & Clinical AI",
+    "description": "Lead Data Scientist (4+ years) building GenAI, clinical NLP, and computer-vision pipelines for healthcare. Python · PyTorch · AWS · Azure · Snowflake.",
+    "inLanguage": "en",
+    "isPartOf": {
+      "@type": "WebSite",
+      "@id": "https://abjasree.com/#website",
+      "url": "https://abjasree.com/",
+      "name": "Abjasree — Lead Data Scientist"
+    },
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://abjasree.com/assets/profile.webp",
+      "width": 300,
+      "height": 300
+    },
+    "mainEntity": {
+      "@type": "Person",
+      "@id": "https://abjasree.com/#person",
+      "name": "Abjasree",
+      "givenName": "Abjasree",
+      "url": "https://abjasree.com/",
+      "image": {
+        "@type": "ImageObject",
+        "@id": "https://abjasree.com/#profile-image",
+        "url": "https://abjasree.com/assets/profile.webp",
+        "width": 300,
+        "height": 300,
+        "caption": "Abjasree — Lead Data Scientist"
+      },
+      "nationality": { "@type": "Country", "name": "India" },
+      "description": "Lead Data Scientist with 4+ years of experience turning unstructured healthcare data into business-impactful solutions — GenAI, clinical NLP, and computer vision.",
+      "jobTitle": "Lead Data Scientist",
+      "knowsAbout": [
+        "Python",
+        "SQL",
+        "C++",
+        "R",
+        "MATLAB",
+        "PyTorch",
+        "TensorFlow",
+        "Hugging Face",
+        "Scikit-Learn",
+        "LangChain",
+        "AWS SageMaker",
+        "Azure ML",
+        "Snowflake",
+        "Docker",
+        "Generative AI",
+        "Large Language Models",
+        "Clinical NLP",
+        "Computer Vision",
+        "Retrieval-Augmented Generation",
+        "AI Agents",
+        "Reinforcement Learning",
+        "Radiomics"
+      ],
+      "sameAs": [
+        "https://github.com/abjasree",
+        "https://www.linkedin.com/in/abjasree/"
+      ],
+      "email": "abjasree1@gmail.com",
+      "telephone": "+91-90487-72210",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Personal",
+        "telephone": "+91-90487-72210",
+        "email": "abjasree1@gmail.com"
+      },
+      "worksFor": {
+        "@type": "OrganizationRole",
+        "roleName": "Lead Data Scientist",
+        "startDate": "2024-04",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "DATYCS",
+          "url": "https://datycs.com"
+        }
+      },
+      "hasOccupation": [
+        {
+          "@type": "EmployeeRole",
+          "roleName": "Lead Data Scientist",
+          "startDate": "2024-04",
+          "memberOf": {
+            "@type": "Organization",
+            "name": "DATYCS",
+            "url": "https://datycs.com"
+          }
+        },
+        {
+          "@type": "EmployeeRole",
+          "roleName": "Data Scientist",
+          "startDate": "2022-08",
+          "endDate": "2024-03",
+          "memberOf": {
+            "@type": "Organization",
+            "name": "IIT Madras",
+            "url": "https://rbcdsai.iitm.ac.in/people/abjasree_s/"
+          }
+        },
+        {
+          "@type": "EmployeeRole",
+          "roleName": "Teaching Assistant",
+          "startDate": "2021-12",
+          "endDate": "2022-08",
+          "memberOf": {
+            "@type": "Organization",
+            "name": "Univ.AI",
+            "url": "https://univ.ai/"
+          }
+        }
+      ],
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Indian Institute of Science Education and Research, Tirupati",
+          "url": "https://www.iisertirupati.ac.in/"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "G. H. S. S. Palakkad"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "Jawahar Navodaya Vidyalaya (JNV)",
+          "url": "https://www.navodaya.gov.in/"
+        }
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#top">Skip to content</a>
+
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="sweep" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"><span></span></div>
+
+  <header class="console-bar">
+    <div class="container bar-inner">
+      <a class="brand mono" href="#top" aria-label="Abjasree home">abjasree<span class="brand-ext">.sys</span><span class="brand-caret" aria-hidden="true"></span></a>
+
+      <nav class="nav mono" aria-label="Primary">
+        <a href="#about"><span class="n-num">01</span>Profile</a>
+        <a href="#work"><span class="n-num">02</span>Deploys</a>
+        <a href="#projects"><span class="n-num">03</span>Experiments</a>
+        <a href="#skills"><span class="n-num">04</span>Services</a>
+        <a href="#credentials"><span class="n-num">05</span>Audits</a>
+        <a href="#contact"><span class="n-num">06</span>Contact</a>
+      </nav>
+
+      <div class="bar-actions">
+        <span class="sys-clock mono" id="sys-clock" aria-hidden="true"></span>
+        <button id="themeToggle" class="bar-btn mono" aria-label="Toggle theme" title="Toggle theme">
+          <span class="toggle-led" aria-hidden="true"></span>
+          <span class="theme-word" data-light="night" data-dark="day"></span>
+        </button>
+        <a class="bar-btn mono resume-btn" href="/assets/resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open résumé in new tab">resume&nbsp;↗</a>
+        <button id="navToggle" class="bar-btn mono nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO — system overview -->
+    <section class="hero container">
+      <p class="boot-line mono">
+        <span class="ok-tag">[ ok ]</span> status — accepting new opportunities
+        <span class="boot-sep" aria-hidden="true">·</span>
+        <span class="uptime-bit">uptime <span id="uptime">4y</span></span>
+      </p>
+
+      <div class="hero-grid">
+        <div class="hero-main">
+          <h1 class="sysname">Abjasree<span class="cursor-block" aria-hidden="true"></span></h1>
+          <p class="role-line mono">lead data scientist <span class="dim" aria-hidden="true">//</span> genai &amp; clinical ai</p>
+
+          <p class="lead">
+            I'm <strong>Abjasree</strong> — 4+ years turning unstructured healthcare data into business-impactful solutions with GenAI, clinical NLP, and computer vision. I build scalable pipelines that raise accuracy and cut manual review time.
+          </p>
+
+          <div class="hero-cta">
+            <a class="btn btn-solid" href="#contact">Open a channel <span aria-hidden="true">→</span></a>
+            <a class="btn btn-line" href="/assets/resume.pdf" target="_blank" rel="noopener noreferrer">resume.pdf <span aria-hidden="true">↗</span></a>
+          </div>
+
+          <ul class="stats" aria-label="Quick facts">
+            <li><span class="stat-num count">4</span><span class="stat-lbl mono">years in prod</span></li>
+            <li><span class="stat-num count">3</span><span class="stat-lbl mono">companies</span></li>
+            <li><span class="stat-num">∞</span><span class="stat-lbl mono">curiosity</span></li>
+          </ul>
+        </div>
+
+        <figure class="feed">
+          <div class="feed-frame">
+            <img class="feed-photo" src="/assets/profile.webp" alt="Abjasree — Lead Data Scientist, headshot" width="320" height="320" loading="eager" fetchpriority="high" decoding="async" />
+            <span class="feed-live mono" aria-hidden="true"><span class="live-dot"></span>live</span>
+          </div>
+          <figcaption class="mono">feed_01 — the scientist · India · remote / hybrid / on-site</figcaption>
+        </figure>
+      </div>
+
+      <ul class="channels mono" aria-label="Contact channels">
+        <li><span class="ch-k">mail</span><a href="mailto:abjasree1@gmail.com">abjasree1@gmail.com</a></li>
+        <li><span class="ch-k">tel</span><a href="tel:+919048772210">+91 90487 72210</a></li>
+        <li><span class="ch-k">git</span><a href="https://github.com/abjasree" target="_blank" rel="noopener noreferrer">github.com/abjasree&nbsp;↗</a></li>
+        <li><span class="ch-k">lnk</span><a href="https://www.linkedin.com/in/abjasree/" target="_blank" rel="noopener noreferrer">linkedin.com/in/abjasree&nbsp;↗</a></li>
+      </ul>
+    </section>
+
+    <!-- TELEMETRY STREAM -->
+    <div class="stream" aria-hidden="true">
+      <span class="stream-tag mono">telemetry</span>
+      <div class="stream-window">
+        <div class="stream-track">
+          <ul class="stream-copy mono">
+            <li>genai &amp; llms</li><li>clinical nlp</li><li>computer vision</li><li>python</li><li>pytorch</li><li>hugging face</li><li>rag</li><li>ai agents</li><li>aws sagemaker</li><li>azure ml</li><li>snowflake</li><li>radiomics</li>
+          </ul>
+          <ul class="stream-copy mono">
+            <li>genai &amp; llms</li><li>clinical nlp</li><li>computer vision</li><li>python</li><li>pytorch</li><li>hugging face</li><li>rag</li><li>ai agents</li><li>aws sagemaker</li><li>azure ml</li><li>snowflake</li><li>radiomics</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SYS.01 — PROFILE -->
+    <section id="about" class="section container">
+      <header class="sec-head rv">
+        <span class="sec-id mono">sys.01</span>
+        <h2 class="sec-title">Profile</h2>
+        <span class="sec-status mono"><span class="status-led ok" aria-hidden="true"></span>identity verified</span>
+      </header>
+
+      <div class="about-grid">
+        <div class="prose rv">
+          <p>
+            I'm a Lead Data Scientist with 4+ years of experience turning unstructured healthcare data into business-impactful solutions. Specializing in <strong>generative AI</strong>, <strong>LLMs</strong>, and <strong>clinical AI</strong>, I build scalable NLP and CV pipelines that enhance accuracy, reduce manual review time, and drive operational efficiency.
+          </p>
+          <p>
+            My work spans from radiomics-based diagnostics to AI-powered document processing and therapy-outcome analytics, delivering measurable improvements in healthcare systems. I'm passionate about transforming unstructured medical data into actionable insights that accelerate healthcare decision-making.
+          </p>
+        </div>
+
+        <figure class="conf rv" data-delay="120">
+          <figcaption class="conf-bar mono"><span class="prompt">$</span> cat /etc/abjasree.conf</figcaption>
+          <dl class="conf-body mono">
+            <div class="conf-row"><dt>role</dt><dd>Lead Data Scientist · DATYCS</dd></div>
+            <div class="conf-row"><dt>stack</dt><dd>Python · PyTorch · AWS · Azure</dd></div>
+            <div class="conf-row"><dt>based</dt><dd>India · open to remote</dd></div>
+            <div class="conf-row"><dt>superpower</dt><dd class="amber">turning unstructured data into clinical insight</dd></div>
+          </dl>
+        </figure>
+      </div>
+    </section>
+
+    <!-- SYS.02 — DEPLOY LOG -->
+    <section id="work" class="section container">
+      <header class="sec-head rv">
+        <span class="sec-id mono">sys.02</span>
+        <h2 class="sec-title">Deploy log</h2>
+        <span class="sec-status mono"><span class="status-led ok" aria-hidden="true"></span>3 deployments · 0 rollbacks</span>
+      </header>
+
+      <ol class="deploys">
+        <li class="deploy rv">
+          <div class="d-rail mono" aria-hidden="true"><span class="d-node"></span></div>
+          <article>
+            <header class="d-head">
+              <div class="d-org">
+                <img src="/assets/datycs.webp" alt="DATYCS logo" width="40" height="40" loading="lazy" decoding="async" />
+                <div>
+                  <h3><a href="https://datycs.com/" target="_blank" rel="noopener noreferrer">DATYCS</a></h3>
+                  <p class="d-role mono">lead data scientist · remote</p>
+                </div>
+              </div>
+              <div class="d-meta mono">
+                <span class="d-tag live-tag"><span class="live-dot" aria-hidden="true"></span>in production</span>
+                <span class="d-when">Apr 2024 — present</span>
+              </div>
+            </header>
+            <ul class="d-bullets">
+              <li>Led a 6-member GenAI &amp; Research squad; built AWS/Azure CI/CD reducing model roll-out time by <span class="m">−80%</span> (3 weeks → 5 days).</li>
+              <li>Architected &amp; deployed 3 transformer-based NLP/CV pipelines processing <strong>10K+ AML/CLL charts</strong> into Snowflake, boosting throughput <span class="m">+35%</span>.</li>
+              <li>Fine-tuned TrOCR for handwritten prescriptions, improving accuracy <span class="m">+25%</span> and enabling real-time medication safety alerts.</li>
+              <li>Deployed Vision LLM on Azure to parse multi-handwriting prior-authorization forms into structured JSON (<span class="m">+28%</span> accuracy, <span class="m">−45%</span> manual review).</li>
+              <li>Leveraged autonomous AI agents for patient-specific search validation and clinician response generation (<span class="m">+30%</span> accuracy, <span class="m">−40%</span> reply time).</li>
+              <li>Partnered with Eversana to analyze AML &amp; CLL therapy-switch drivers and adverse effects, shaping pharmaceutical market-access strategies.</li>
+            </ul>
+          </article>
+        </li>
+
+        <li class="deploy rv" data-delay="80">
+          <div class="d-rail mono" aria-hidden="true"><span class="d-node"></span></div>
+          <article>
+            <header class="d-head">
+              <div class="d-org">
+                <img src="/assets/iit_madras.webp" alt="IIT Madras logo" width="40" height="40" loading="lazy" decoding="async" />
+                <div>
+                  <h3><a href="https://rbcdsai.iitm.ac.in/people/abjasree_s/" target="_blank" rel="noopener noreferrer">IIT Madras</a></h3>
+                  <p class="d-role mono">data scientist · chennai</p>
+                </div>
+              </div>
+              <div class="d-meta mono">
+                <span class="d-tag">archived</span>
+                <span class="d-when">Aug 2022 — Mar 2024</span>
+              </div>
+            </header>
+            <ul class="d-bullets">
+              <li>Automated analysis of <strong>1,000+ CT/MRI images</strong>, reducing manual preprocessing time by <span class="m">−80%</span>.</li>
+              <li>Increased renal calculi &amp; pulmonary nodule diagnostic accuracy by <span class="m">+18%</span> using CNN + radiomics + Bayesian-optimized XGBoost.</li>
+              <li>Deployed QA models at Apollo Proton Cancer Center, cutting turnaround <span class="m">−10%</span> and flagging <strong>12 high-risk plans per quarter</strong>.</li>
+            </ul>
+          </article>
+        </li>
+
+        <li class="deploy rv" data-delay="160">
+          <div class="d-rail mono" aria-hidden="true"><span class="d-node"></span></div>
+          <article>
+            <header class="d-head">
+              <div class="d-org">
+                <img src="/assets/univai.webp" alt="Univ.AI logo" width="40" height="40" loading="lazy" decoding="async" />
+                <div>
+                  <h3><a href="https://univ.ai/" target="_blank" rel="noopener noreferrer">Univ.AI</a></h3>
+                  <p class="d-role mono">teaching assistant · part-time</p>
+                </div>
+              </div>
+              <div class="d-meta mono">
+                <span class="d-tag">archived</span>
+                <span class="d-when">Dec 2021 — Aug 2022</span>
+              </div>
+            </header>
+            <ul class="d-bullets">
+              <li>Assisted in teaching machine learning and data science courses to students from diverse backgrounds.</li>
+              <li>Mentored students in practical ML projects and helped them understand complex AI/ML concepts.</li>
+              <li>Contributed to curriculum development and course material preparation.</li>
+            </ul>
+          </article>
+        </li>
+      </ol>
+    </section>
+
+    <!-- SYS.03 — EXPERIMENTS -->
+    <section id="projects" class="section container">
+      <header class="sec-head rv">
+        <span class="sec-id mono">sys.03</span>
+        <h2 class="sec-title">Experiments</h2>
+        <span class="sec-status mono"><span class="status-led ok" aria-hidden="true"></span>5 runs · all converged</span>
+      </header>
+
+      <ol class="runs">
+        <li class="run rv">
+          <header class="run-head">
+            <span class="run-tag mono">[ pub ]</span>
+            <h3 class="run-title"><a href="https://www.nature.com/articles/s41598-024-83786-6" target="_blank" rel="noopener noreferrer">Radiomics for NSCLC Classification&nbsp;↗</a></h3>
+            <span class="run-when mono">Oct 2023 — Jan 2024</span>
+          </header>
+          <p class="run-desc">Built radiomics model with <span class="m">83%</span> accuracy for differentiating adenocarcinoma and squamous cell carcinoma in non-small cell lung cancer beyond nodule morphology in chest CT. Decision-curve analysis showed net clinical benefit across thresholds.</p>
+          <div class="chips">
+            <span class="chip">Radiomics</span><span class="chip">Machine Learning</span><span class="chip">Medical Imaging</span>
+          </div>
+        </li>
+
+        <li class="run rv" data-delay="60">
+          <header class="run-head">
+            <span class="run-tag mono">[ conf ]</span>
+            <h3 class="run-title"><a href="https://nips.cc/virtual/2023/82529" target="_blank" rel="noopener noreferrer">Zero-Shot Image Registration (ZSIR-FE)&nbsp;↗</a></h3>
+            <span class="run-when mono">Sept 2022 — Oct 2023 · Med-NeurIPS 2023</span>
+          </header>
+          <p class="run-desc">Designed DNN feature-based registration improving Dice score by <span class="m">+0.30</span> and running <span class="m">6×</span> faster than SIFT on BRaTs dataset through feature extraction approach.</p>
+          <div class="chips">
+            <span class="chip">Deep Learning</span><span class="chip">Computer Vision</span><span class="chip">Medical Image Registration</span>
+          </div>
+        </li>
+
+        <li class="run rv" data-delay="120">
+          <header class="run-head">
+            <span class="run-tag mono">[ pub ]</span>
+            <h3 class="run-title"><a href="https://www.nature.com/articles/s41598-023-46391-7" target="_blank" rel="noopener noreferrer">Pulmonary Nodules Classification&nbsp;↗</a></h3>
+            <span class="run-when mono">Sept 2022 — Oct 2023</span>
+          </header>
+          <p class="run-desc">Engineered radiomic features + XGBoost on limited Indian dataset, achieving <span class="m">89%</span> accuracy (<span class="m">+10%</span> vs prior studies) for pulmonary nodules classification from chest CT scans.</p>
+          <div class="chips">
+            <span class="chip">XGBoost</span><span class="chip">Feature Engineering</span><span class="chip">Medical AI</span>
+          </div>
+        </li>
+
+        <li class="run rv" data-delay="180">
+          <header class="run-head">
+            <span class="run-tag mono">[ lab ]</span>
+            <h3 class="run-title">Automatic Detection of Renal Calculi</h3>
+            <span class="run-when mono">Sept 2022 — Jul 2023</span>
+          </header>
+          <p class="run-desc">Processed <span class="m">163</span> CT scans and built deep-learning pipeline reaching <span class="m">85%</span> accuracy (<span class="m">+25 pp</span> improvement); slated for clinical deployment.</p>
+          <div class="chips">
+            <span class="chip">Deep Learning</span><span class="chip">Medical Imaging</span><span class="chip">Clinical AI</span>
+          </div>
+        </li>
+
+        <li class="run rv" data-delay="240">
+          <header class="run-head">
+            <span class="run-tag mono">[ thesis ]</span>
+            <h3 class="run-title"><a href="/assets/ms_thesis.pdf" target="_blank" rel="noopener noreferrer">Elliptic Flow of Light Nuclei&nbsp;↗</a></h3>
+            <span class="run-when mono">May 2019 — June 2020</span>
+          </header>
+          <p class="run-desc">Simulated heavy-ion collisions with AMPT; computed elliptic flow using STAR detector data for light nuclei. Developed C++ macros to compare Coalescence models with experimental measurements, achieving thesis distinction. Also worked on simple ML classification models to distinguish signals and background.</p>
+          <div class="chips">
+            <span class="chip">HPC</span><span class="chip">C++</span><span class="chip">Machine Learning</span>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- SYS.04 — SERVICES -->
+    <section id="skills" class="section container">
+      <header class="sec-head rv">
+        <span class="sec-id mono">sys.04</span>
+        <h2 class="sec-title">Services</h2>
+        <span class="sec-status mono"><span class="status-led ok" aria-hidden="true"></span>all systems operational</span>
+      </header>
+
+      <div class="services">
+        <article class="svc svc-a rv">
+          <header class="svc-head">
+            <div>
+              <span class="svc-sub mono">programming · ml</span>
+              <h3>Languages &amp; Frameworks</h3>
+            </div>
+            <span class="svc-status mono"><span class="status-led ok" aria-hidden="true"></span>operational</span>
+          </header>
+          <svg class="spark" viewBox="0 0 240 36" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,26 24,22 48,25 72,16 96,19 120,12 144,15 168,9 192,12 216,6 240,8" /></svg>
+          <div class="chips">
+            <span class="chip">Python</span><span class="chip">SQL</span><span class="chip">C++</span><span class="chip">R</span><span class="chip">MATLAB</span><span class="chip">PyTorch</span><span class="chip">TensorFlow</span><span class="chip">Hugging Face</span><span class="chip">Scikit-Learn</span><span class="chip">LangChain</span>
+          </div>
+        </article>
+
+        <article class="svc svc-b rv" data-delay="80">
+          <header class="svc-head">
+            <div>
+              <span class="svc-sub mono">cloud · mlops</span>
+              <h3>Cloud &amp; MLOps</h3>
+            </div>
+            <span class="svc-status mono"><span class="status-led ok" aria-hidden="true"></span>operational</span>
+          </header>
+          <svg class="spark" viewBox="0 0 240 36" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,28 30,24 60,26 90,18 120,21 150,13 180,16 210,8 240,11" /></svg>
+          <div class="chips">
+            <span class="chip">AWS SageMaker</span><span class="chip">AWS S3</span><span class="chip">Azure ML</span><span class="chip">Azure Functions</span><span class="chip">Snowflake</span><span class="chip">Docker</span><span class="chip">CI/CD</span>
+          </div>
+        </article>
+
+        <article class="svc svc-full rv" data-delay="160">
+          <header class="svc-head">
+            <div>
+              <span class="svc-sub mono">domains · research</span>
+              <h3>AI/ML Domains</h3>
+            </div>
+            <span class="svc-status mono"><span class="status-led ok" aria-hidden="true"></span>operational</span>
+          </header>
+          <svg class="spark" viewBox="0 0 240 36" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,24 30,27 60,20 90,23 120,14 150,18 180,10 210,13 240,7" /></svg>
+          <div class="chips">
+            <span class="chip">GenAI &amp; LLMs</span><span class="chip">Clinical NLP</span><span class="chip">Computer Vision</span><span class="chip">RAG</span><span class="chip">AI Agents</span><span class="chip">Reinforcement Learning</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SYS.05 — AUDITS -->
+    <section id="credentials" class="section container">
+      <header class="sec-head rv">
+        <span class="sec-id mono">sys.05</span>
+        <h2 class="sec-title">Audits</h2>
+        <span class="sec-status mono"><span class="status-led ok" aria-hidden="true"></span>all checks passed</span>
+      </header>
+
+      <h3 class="sub-head mono rv">integrity checks — certifications</h3>
+      <div class="audits">
+        <a class="audit rv" href="https://www.credly.com/badges/27ca85fe-3ea0-4f3f-b1b1-e5f179ca66b9/linked_in_profile" target="_blank" rel="noopener noreferrer" aria-label="View the AWS Certified ML Engineer — Associate Early Adopter badge on Credly">
+          <span class="audit-tag mono">[ pass ]</span>
+          <span class="audit-body">
+            <strong>AWS Certified ML Engineer — Associate Early Adopter</strong>
+            <span class="audit-meta mono">Amazon Web Services · Dec 2024</span>
+          </span>
+          <span class="audit-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a class="audit rv" data-delay="80" href="https://www.credly.com/badges/045bcb7e-adf3-4257-9df0-8b26ddb58518/linked_in_profile" target="_blank" rel="noopener noreferrer" aria-label="View the AWS Certified ML Engineer — Associate badge on Credly">
+          <span class="audit-tag mono">[ pass ]</span>
+          <span class="audit-body">
+            <strong>AWS Certified ML Engineer — Associate</strong>
+            <span class="audit-meta mono">Amazon Web Services · Dec 2024 → Dec 2027</span>
+          </span>
+          <span class="audit-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a class="audit rv" data-delay="160" href="http://learn.deeplearning.ai/accomplishments/c59cb7fa-3ab5-4ada-8426-3ec7136452f3?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="View the Event-Driven Agentic Document Workflows certificate on DeepLearning.AI">
+          <span class="audit-tag mono">[ pass ]</span>
+          <span class="audit-body">
+            <strong>Event-Driven Agentic Document Workflows</strong>
+            <span class="audit-meta mono">DeepLearning.AI · Mar 2025</span>
+          </span>
+          <span class="audit-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a class="audit rv" data-delay="240" href="https://www.coursera.org/account/accomplishments/certificate/JQYPCQNCERCC" target="_blank" rel="noopener noreferrer" aria-label="View the Machine Learning certificate on Coursera">
+          <span class="audit-tag mono">[ pass ]</span>
+          <span class="audit-body">
+            <strong>Machine Learning</strong>
+            <span class="audit-meta mono">Coursera · Oct 2021</span>
+          </span>
+          <span class="audit-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a class="audit rv" data-delay="320" href="https://www.coursera.org/account/accomplishments/certificate/CZYBF2J7S6CW" target="_blank" rel="noopener noreferrer" aria-label="View the Sequence Models certificate on Coursera">
+          <span class="audit-tag mono">[ pass ]</span>
+          <span class="audit-body">
+            <strong>Sequence Models</strong>
+            <span class="audit-meta mono">Coursera · Oct 2021</span>
+          </span>
+          <span class="audit-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a class="audit rv" data-delay="400" href="https://www.coursera.org/account/accomplishments/certificate/NQU38JMS78LM" target="_blank" rel="noopener noreferrer" aria-label="View the Algorithmic Toolbox certificate on Coursera">
+          <span class="audit-tag mono">[ pass ]</span>
+          <span class="audit-body">
+            <strong>Algorithmic Toolbox</strong>
+            <span class="audit-meta mono">Coursera · Nov 2021</span>
+          </span>
+          <span class="audit-arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <h3 class="sub-head mono rv">boot sequence — education</h3>
+      <div class="boot-seq">
+        <article class="edu rv">
+          <span class="edu-tag mono"><span class="ok-tag">[ ok ]</span> stage_0 · 2012 — 2013</span>
+          <div class="edu-body">
+            <img src="/assets/jnv.webp" alt="Jawahar Navodaya Vidyalaya logo" width="44" height="44" loading="lazy" decoding="async" />
+            <div>
+              <h4><a href="https://www.navodaya.gov.in/" target="_blank" rel="noopener noreferrer">Jawahar Navodaya Vidyalaya (JNV)</a></h4>
+              <p class="edu-deg">High School · CGPA: 10</p>
+            </div>
+          </div>
+        </article>
+        <article class="edu rv" data-delay="80">
+          <span class="edu-tag mono"><span class="ok-tag">[ ok ]</span> stage_1 · 2013 — 2015</span>
+          <div class="edu-body">
+            <img src="/assets/ghss.webp" alt="G. H. S. S. Palakkad logo" width="44" height="44" loading="lazy" decoding="async" />
+            <div>
+              <h4>G. H. S. S. Palakkad</h4>
+              <p class="edu-deg">Higher Secondary · 97.33%</p>
+            </div>
+          </div>
+        </article>
+        <article class="edu rv" data-delay="160">
+          <span class="edu-tag mono"><span class="ok-tag">[ ok ]</span> stage_2 · 2015 — 2020</span>
+          <div class="edu-body">
+            <img src="/assets/iiser.webp" alt="IISER Tirupati logo" width="44" height="44" loading="lazy" decoding="async" />
+            <div>
+              <h4><a href="https://www.iisertirupati.ac.in/" target="_blank" rel="noopener noreferrer">IISER Tirupati</a></h4>
+              <p class="edu-deg">BS MS Dual Degree · CGPA: 8.0</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SYS.06 — CONTACT -->
+    <section id="contact" class="section container">
+      <header class="sec-head rv">
+        <span class="sec-id mono">sys.06</span>
+        <h2 class="sec-title">Open a channel</h2>
+        <span class="sec-status mono"><span class="status-led ok" aria-hidden="true"></span>channel open</span>
+      </header>
+
+      <div class="contact-grid">
+        <aside class="contact-side rv">
+          <p class="lead">Got a role, a problem, or just curious about my work? Drop a line — I read everything that lands in my inbox.</p>
+          <ul class="channels channels-stack mono">
+            <li><span class="ch-k">mail</span><a href="mailto:abjasree1@gmail.com">abjasree1@gmail.com</a></li>
+            <li><span class="ch-k">tel</span><a href="tel:+919048772210">+91 90487 72210</a></li>
+            <li><span class="ch-k">lnk</span><a href="https://www.linkedin.com/in/abjasree/" target="_blank" rel="noopener noreferrer">/in/abjasree&nbsp;↗</a></li>
+            <li><span class="ch-k">git</span><a href="https://github.com/abjasree" target="_blank" rel="noopener noreferrer">@abjasree&nbsp;↗</a></li>
+          </ul>
+        </aside>
+
+        <form id="contact-form" class="contact-form rv" data-delay="100" aria-label="Contact form" action="https://formspree.io/f/mqeogkre" method="POST">
+          <p class="form-bar mono" aria-hidden="true"><span class="prompt">$</span> mail -s "hello abjasree" <span class="form-bar-status">— awaiting input<span class="caret"></span></span></p>
+          <div class="row">
+            <label class="mono" for="name">your name *</label>
+            <input id="name" name="name" type="text" required placeholder="Jane Doe" autocomplete="name" aria-describedby="name-help" />
+            <small id="name-help" class="sr-only">Enter your full name</small>
+          </div>
+          <div class="row">
+            <label class="mono" for="email">email *</label>
+            <input id="email" name="email" type="email" required placeholder="jane@company.com" autocomplete="email" aria-describedby="email-help" />
+            <small id="email-help" class="sr-only">Enter a valid email address</small>
+          </div>
+          <div class="row">
+            <label class="mono" for="message">message *</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Tell me about the role, project, or question…" aria-describedby="message-help"></textarea>
+            <small id="message-help" class="sr-only">Describe the opportunity or inquiry</small>
+          </div>
+          <div class="row hp" aria-hidden="true">
+            <label for="hp-field">Leave this field empty</label>
+            <input id="hp-field" name="_gotcha" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+          <button class="btn btn-solid" type="submit">
+            <span aria-live="polite">Transmit</span>
+            <span aria-hidden="true">▸</span>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container eot mono rv" aria-hidden="true">── end of transmission ──</div>
+    <div class="container foot mono">
+      <p>© <span id="footer-year">__BUILD_YEAR__</span> Abjasree · crafted with care<span id="footer-time"></span></p>
+      <div class="foot-links">
+        <a href="https://github.com/abjasree/abjasree.github.io" target="_blank" rel="noopener noreferrer">view source&nbsp;↗</a>
+        <a href="#top">back to top&nbsp;↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="hud mono" id="hud" aria-hidden="true">
+    <span id="hud-x">x:0000</span>
+    <span id="hud-y">y:0000</span>
+    <span id="hud-s">scroll:000%</span>
+  </div>
+
+  <a href="#top" class="back-to-top mono" id="back-to-top" aria-label="Back to top">↑</a>
+</body>
+</html>

@@ -1,121 +1,59 @@
-# Abjasree's Portfolio - Integrated Site
+# Abjasree's Portfolio
 
-This repository contains an integrated version of Abjasree's portfolio website that serves both v1 and v2 versions.
+Source for [abjasree.com](https://abjasree.com). Vanilla HTML / CSS / JS built with Vite — no framework. GitHub Actions builds and deploys to GitHub Pages on every push to `main`.
 
-## 🌐 Site Structure
-
-- **Main site (/)**: Serves the original v1 design
-- **v1 (/v1)**: Redirects to the main site
-- **v2 (/v2)**: Serves the new v2 design
-
-## 🚀 Getting Started
-
-### Installation
+## Getting Started
 
 ```bash
-# Install dependencies for the root project
 npm install
-
-# Install dependencies for v1
-cd v1 && npm install && cd ..
-
-# Install dependencies for v2
-cd v2 && npm install && cd ..
+npm run dev       # dev server on http://localhost:5173
+npm run build     # production build → dist/
+npm run preview   # preview the production build
 ```
 
-### Development
+## Deployment
 
-```bash
-# Run v1 in development mode
-npm run dev:v1
+Pushes to `main` are built and deployed automatically via [.github/workflows/deploy.yml](.github/workflows/deploy.yml) using `actions/deploy-pages`. Pull requests run the build only. To trigger a deploy manually, use *Run workflow* on the Actions tab.
 
-# Run v2 in development mode
-npm run dev:v2
+## URLs
 
-# Run v1 by default
-npm run dev
-```
+- Local dev: <http://localhost:5173>
+- Production: <https://abjasree.com>
+- Page versions: `/` serves v1 by default; `/v1`, `/v2`, and `/v3` open each design explicitly
+- Resume redirects: `/cv`, `/resume` → `/assets/resume.pdf`
 
-### Building
-
-```bash
-# Build both versions and integrate them
-npm run build
-
-# Build only v1
-npm run build:v1
-
-# Build only v2
-npm run build:v2
-
-# Clean all build artifacts
-npm run clean
-```
-
-### Deployment
-
-```bash
-# Deploy to GitHub Pages
-npm run deploy
-
-# Or use the shell script
-./deploy.sh
-```
-
-## 📁 Project Structure
+## Project Structure
 
 ```
-abjasree.github.io_integrated/
-├── v1/                 # Original portfolio (v1)
-├── v2/                 # New portfolio design (v2)
-├── scripts/
-│   └── integrate.js    # Integration script
-├── dist/               # Final integrated build
-├── deploy.sh           # Deployment script
-└── package.json        # Root package.json
+abjasree.github.io/
+├── v1/                     # default design (also served at /)
+│   ├── index.html
+│   ├── main.js
+│   └── style.css
+├── v2/                     # "Systems Ledger" design, served at /v2
+│   ├── index.html
+│   ├── main.js
+│   ├── style.css
+│   └── fonts/
+├── v3/                     # "Control Room" design, served at /v3
+│   ├── index.html
+│   ├── main.js
+│   ├── style.css
+│   └── fonts/
+├── public/                 # copied verbatim into the build
+│   ├── CNAME               # custom domain
+│   ├── 404.html            # static 404 served by GitHub Pages
+│   ├── manifest.webmanifest
+│   ├── robots.txt
+│   ├── cv.html, resume.html  # meta-refresh → /assets/resume.pdf
+│   ├── fonts/              # v1 fonts
+│   └── assets/             # images, resume.pdf, ms_thesis.pdf
+├── temp_v1/, temp_v2/      # previous site designs, kept for reference
+├── vite.config.js          # multi-page build, root default copy, CSP hashing, sitemap, dev routes
+└── .github/workflows/deploy.yml
 ```
 
-## 🔧 How It Works
+## Links
 
-1. **Build Process**: Each version is built independently in its respective directory
-2. **Integration**: The `integrate.js` script combines both builds:
-   - v1 files are copied to the root of `dist/`
-   - v2 files are copied to `dist/v2/`
-   - A redirect is created at `dist/v1/` that points to the root
-3. **Deployment**: The integrated `dist/` folder is deployed to GitHub Pages
-
-## 🛠 Maintenance
-
-### Adding New Features
-
-- **For v1**: Work in the `v1/` directory
-- **For v2**: Work in the `v2/` directory
-- **For shared functionality**: Consider updating the integration script
-
-### Updating Dependencies
-
-```bash
-# Update root dependencies
-npm update
-
-# Update v1 dependencies
-cd v1 && npm update && cd ..
-
-# Update v2 dependencies
-cd v2 && npm update && cd ..
-```
-
-## 📊 Performance
-
-Both versions are optimized for production with:
-- Minified assets
-- Tree shaking
-- CSS optimization
-- Image optimization
-- Service worker caching (where applicable)
-
-## 🔗 Links
-
-- **Live Site**: https://abjasree.github.io
-- **V2 Version**: https://abjasree.github.io/v2
-- **Repository**: https://github.com/abjasree/abjasree.github.io
+- Live site: <https://abjasree.com>
+- Repository: <https://github.com/abjasree/abjasree.github.io>
