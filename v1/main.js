@@ -20,8 +20,12 @@ const idle = window.requestIdleCallback || ((cb) => setTimeout(() => cb({ timeRe
       root.setAttribute("data-theme", next);
       root.style.colorScheme = next;
       if (themeMeta) themeMeta.content = next === "light" ? "#f6f3ec" : "#08090c";
-      localStorage.setItem("theme", next);
       btn.setAttribute("aria-pressed", next === "light" ? "true" : "false");
+      // Storage can be blocked (site data off, some private modes); the
+      // theme still switches, it just isn't remembered.
+      try {
+        localStorage.setItem("theme", next);
+      } catch {}
     };
     if (document.startViewTransition && !reduceMotion) {
       // Feed the CSS theme-wipe the button's position so the new theme
@@ -139,7 +143,7 @@ const idle = window.requestIdleCallback || ((cb) => setTimeout(() => cb({ timeRe
       navLinks.forEach((a) => {
         const active = a.getAttribute("href") === "#" + activeId;
         a.classList.toggle("is-active", active);
-        if (active) a.setAttribute("aria-current", "page");
+        if (active) a.setAttribute("aria-current", "true");
         else a.removeAttribute("aria-current");
       });
 
@@ -156,39 +160,6 @@ const idle = window.requestIdleCallback || ((cb) => setTimeout(() => cb({ timeRe
     }, 100);
   });
   onScroll();
-})();
-
-/* ---------- Reveal on scroll ---------- */
-(() => {
-  const items = document.querySelectorAll(".reveal");
-  if (!items.length) return;
-
-  const revealAll = () => items.forEach((el) => el.classList.add("is-visible"));
-
-  if (reduceMotion || typeof IntersectionObserver === "undefined") {
-    revealAll();
-    return;
-  }
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        const el = entry.target;
-        const delay = parseInt(el.dataset.delay || "0", 10);
-        el.style.transitionDelay = `${delay}ms`;
-        el.classList.add("is-visible");
-        io.unobserve(el);
-      });
-    },
-    { rootMargin: "0px 0px -10% 0px", threshold: 0.08 }
-  );
-  items.forEach((el) => io.observe(el));
-
-  // Safety net: if the page never scrolls (bot, headless tester, very tall
-  // viewport, or content-visibility skipping intersection callbacks for
-  // off-screen sections) reveal everything after a short idle so the page
-  // can never get stuck with permanently invisible content.
-  idle(() => setTimeout(revealAll, 1500));
 })();
 
 /* ---------- Metric count-up ---------- */
@@ -222,10 +193,7 @@ const idle = window.requestIdleCallback || ((cb) => setTimeout(() => cb({ timeRe
         const decimals = (m[2].split(".")[1] || "").length;
         // Pin the chip to its final width so the count-up doesn't reflow text.
         el.style.minWidth = `${el.offsetWidth}px`;
-        // Let the parent card's reveal transition bring the chip into view
-        // before the digits start moving.
-        const wait = parseInt(el.closest(".reveal")?.dataset.delay || "0", 10) + 250;
-        setTimeout(() => animate(el, m[1], parseFloat(m[2]), decimals, m[3]), wait);
+        animate(el, m[1], parseFloat(m[2]), decimals, m[3]);
       });
     },
     { threshold: 0.6 }

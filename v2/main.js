@@ -16,8 +16,12 @@ const idle = window.requestIdleCallback || ((cb) => setTimeout(() => cb({ timeRe
       root.setAttribute("data-theme", next);
       root.style.colorScheme = next;
       if (themeMeta) themeMeta.content = next === "light" ? "#f3eee3" : "#171511";
-      localStorage.setItem("theme", next);
       btn.setAttribute("aria-pressed", next === "light" ? "true" : "false");
+      // Storage can be blocked (site data off, some private modes); the
+      // theme still switches, it just isn't remembered.
+      try {
+        localStorage.setItem("theme", next);
+      } catch {}
     };
     if (document.startViewTransition && !reduceMotion) {
       document.startViewTransition(run);
@@ -107,7 +111,7 @@ const idle = window.requestIdleCallback || ((cb) => setTimeout(() => cb({ timeRe
       navLinks.forEach((a) => {
         const active = a.getAttribute("href") === "#" + activeId;
         a.classList.toggle("is-active", active);
-        if (active) a.setAttribute("aria-current", "page");
+        if (active) a.setAttribute("aria-current", "true");
         else a.removeAttribute("aria-current");
       });
 
@@ -124,36 +128,6 @@ const idle = window.requestIdleCallback || ((cb) => setTimeout(() => cb({ timeRe
     }, 100);
   });
   onScroll();
-})();
-
-/* ---------- Reveal on scroll ---------- */
-(() => {
-  const items = document.querySelectorAll(".rv");
-  if (!items.length) return;
-
-  const revealAll = () => items.forEach((el) => el.classList.add("is-visible"));
-
-  if (reduceMotion || typeof IntersectionObserver === "undefined") {
-    revealAll();
-    return;
-  }
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        const el = entry.target;
-        el.style.transitionDelay = `${parseInt(el.dataset.delay || "0", 10)}ms`;
-        el.classList.add("is-visible");
-        io.unobserve(el);
-      });
-    },
-    { rootMargin: "0px 0px -10% 0px", threshold: 0.08 }
-  );
-  items.forEach((el) => io.observe(el));
-
-  // Safety net: never leave content invisible if intersection callbacks
-  // don't fire (bots, headless, very tall viewports).
-  idle(() => setTimeout(revealAll, 1500));
 })();
 
 /* ---------- Spec tape: only animate while on screen ---------- */
@@ -199,8 +173,7 @@ const idle = window.requestIdleCallback || ((cb) => setTimeout(() => cb({ timeRe
         if (!m) return;
         const decimals = (m[2].split(".")[1] || "").length;
         el.style.minWidth = `${el.offsetWidth}px`;
-        const wait = parseInt(el.closest(".rv")?.dataset.delay || "0", 10) + 200;
-        setTimeout(() => animate(el, m[1], parseFloat(m[2]), decimals, m[3]), wait);
+        setTimeout(() => animate(el, m[1], parseFloat(m[2]), decimals, m[3]), 200);
       });
     },
     { threshold: 0.6 }
